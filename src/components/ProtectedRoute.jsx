@@ -1,7 +1,13 @@
-import Outlet
+import { useState } from "react"
+import { Outlet, Navigate } from "react-router-dom"
 
 export default function ProtectedRoute() {
-  return (
-    <div>ProtectedRoute</div>
-  )
+
+  const [state, setState] = useState(false);
+
+  if (!state) {
+    <Navigate to='/login' replace />
+  }
+
+  return <Outlet />
 }
