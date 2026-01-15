@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ACTIONS } from "../reducer/authReducer";
+import { useAuth } from "../hooks/useAuth";
 
 export function LoginForm() {
 
     const [username, setUsername] = useState('');
     const navigate = useNavigate();
+    const { dispatch } = useAuth();
 
     function handleChange(e) {
         setUsername(e.target.value)
@@ -12,6 +15,7 @@ export function LoginForm() {
 
     function handleSubmit(e) {
         e.preventDefault();
+        dispatch({ type: ACTIONS.LOGIN, payload: username })
         navigate('/dashboard', { replace: true })
     }
 

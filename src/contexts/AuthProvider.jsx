@@ -1,5 +1,5 @@
 import { initialValue, authReducer } from "../reducer/authReducer"
-import { AuthContext, AuthContext } from "./AuthContext"
+import { AuthContext } from "./AuthContext"
 import { useReducer } from "react"
 
 export function AuthProvider({ children }) {
