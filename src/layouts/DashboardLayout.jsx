@@ -5,8 +5,10 @@ import { Navbar } from '../components/Navbar'
 export function DashboardLayout() {
     return (
         <div>
-            <Sidebar />
-            <Navbar />
+            <header>
+                <Sidebar />
+                <Navbar />
+            </header>
             <main>
                 <Outlet />
             </main>

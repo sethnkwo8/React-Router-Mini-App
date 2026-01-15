@@ -1,16 +1,23 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export function LoginForm() {
 
     const [username, setUsername] = useState('');
+    const navigate = useNavigate();
 
     function handleChange(e) {
         setUsername(e.target.value)
     }
 
+    function handleSubmit(e) {
+        e.preventDefault();
+        navigate('/dashboard', { replace: true })
+    }
+
     return (
         <div className="min-h-screen flex flex-col items-center justify-center">
-            <form className="border border-black rounded-lg p-6 flex flex-col items-center space-y-2 w-full md:w-1/2">
+            <form className="border border-black rounded-lg p-6 flex flex-col items-center space-y-2 w-full md:w-1/2" onSubmit={handleSubmit}>
                 <h1 className="font-bold text-3xl">Login</h1>
                 <label className="font-bold" htmlFor="username">Username</label>
                 <input className="outline-0 border border-black rounded-lg w-full p-2" id="username" onChange={handleChange} type="text" value={username} />
