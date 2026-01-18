@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom"
 
-export function UsersDetailsPage() {
+export default function UsersDetailsPage() {
     const searchParams = useParams()
 
     return (
