@@ -10,6 +10,7 @@ import { DashboardLayout } from "./layouts/DashboardLayout";
 
 import { usersDetailsLoader } from "./loaders/usersDetailsLoader";
 import { usersLoader } from "./loaders/usersLoader";
+import ErrorPage from "./pages/ErrorPage";
 
 export const router = createBrowserRouter([
     {
@@ -26,7 +27,7 @@ export const router = createBrowserRouter([
                     { index: true, element: <DashboardPage /> },
                     { path: 'analytics', element: <AnalyticsPage /> },
                     { path: 'users', element: <UsersPage />, loader: usersLoader },
-                    { path: 'users/:id', element: <UsersDetailsPage />, loader: usersDetailsLoader }
+                    { path: 'users/:id', element: <UsersDetailsPage />, loader: usersDetailsLoader, errorElement: <ErrorPage /> }
                 ]
             }
         ]
