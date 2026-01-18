@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import LogoutButton from "./LogoutButton"
+import { LogoutButton } from "./LogoutButton"
 
 export function Sidebar() {
 
@@ -13,7 +13,6 @@ export function Sidebar() {
                     <li><Link to='/dashboard' className="hover:bg-gray-600 p-1">Dashboard</Link></li>
                     <li><Link to='/dashboard/analytics' className="hover:bg-gray-600 p-1">Analytics</Link></li>
                     <li><Link to='/dashboard/users' className="hover:bg-gray-600 p-1">Users</Link></li>
-                    <li><Link to='/dashboard/settings' className="hover:bg-gray-600 p-1">Settings</Link></li>
                     <li><LogoutButton /></li>
                 </ul>
             </div>

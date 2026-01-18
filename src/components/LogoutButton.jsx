@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { ACTIONS } from "../reducer/authReducer";
 
-export default function LogoutButton() {
+export function LogoutButton() {
 
     const navigate = useNavigate();
     const { dispatch } = useAuth();
