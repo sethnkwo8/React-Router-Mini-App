@@ -1,11 +1,16 @@
-import { users } from "../data/users";
+import { fetchUsers } from "../utils/fakeAPI";
 
 export function usersDetailsLoader({ params }) {
-    const user = users.find(u => u.id === params.id)
+    return {
+        user: fetchUsers().then(users => {
+            const found = users.find(u => u.id === params.id)
 
-    if (!user) {
-        throw new Error('User not found')
-    }
+            if (!found) {
+                throw new Error('User not found')
+            }
 
-    return user;
+            return found;
+        }
+        )
+    };
 }

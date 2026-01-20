@@ -1,5 +1,7 @@
-import { users } from "../data/users";
+import { fetchUsers } from "../utils/fakeAPI";
 
 export function usersLoader() {
-    return users
+    return {
+        users: fetchUsers()
+    }
 }
