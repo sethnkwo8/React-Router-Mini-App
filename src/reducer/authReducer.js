@@ -11,13 +11,17 @@ export const ACTIONS = {
 export function authReducer(state, action) {
     switch (action.type) {
         case ACTIONS.LOGIN:
+            localStorage.setItem('user', JSON.stringify(action.payload))
             return {
                 ...state,
                 isAuthenticated: true,
                 user: action.payload
             }
+
         case ACTIONS.LOGOUT:
+            localStorage.removeItem('user');
             return initialValue
+
         default:
             return state
     }

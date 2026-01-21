@@ -7,6 +7,7 @@ import UsersPage from "./pages/UsersPage";
 import UsersDetailsPage from "./pages/UsersDetailsPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { DashboardLayout } from "./layouts/DashboardLayout";
+import { authLoader } from "./loaders/authLoader";
 
 import { usersDetailsLoader } from "./loaders/usersDetailsLoader";
 import { usersLoader } from "./loaders/usersLoader";
@@ -23,6 +24,7 @@ export const router = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <DashboardLayout />,
+                loader: authLoader,
                 children: [
                     { index: true, element: <DashboardPage /> },
                     { path: 'analytics', element: <AnalyticsPage /> },
